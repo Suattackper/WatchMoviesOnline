@@ -1,0 +1,86 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.googleGmsGoogleServices)
+}
+
+android {
+    namespace 'com.example.movieapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.movieapp"
+        minSdk 28
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+
+    implementation libs.glide
+
+    // ViewPager version 2
+    implementation libs.viewpager2
+
+    implementation libs.recyclerview
+
+    // Read more text
+    implementation libs.readmoretextview
+
+    // Circle Avatar
+    implementation libs.circleimageview
+
+    // Anim for splash screen
+    implementation libs.lottie.v610
+
+    // Enhance UX with Navigation library
+    implementation libs.navigation.runtime
+
+    // Shimmer Effect
+    implementation libs.shimmer
+
+    //for exoplayer
+    implementation libs.exoplayer.core
+    implementation libs.exoplayer.ui
+
+    //for playing online content
+    implementation libs.exoplayer.dash
+    implementation libs.firebase.database
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
+
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+}
