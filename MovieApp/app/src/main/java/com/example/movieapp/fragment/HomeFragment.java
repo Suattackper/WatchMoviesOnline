@@ -1,5 +1,7 @@
 package com.example.movieapp.fragment;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,16 +15,20 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.movieapp.CategoryFragment;
 import com.example.movieapp.PlayMovieActivity;
 import com.example.movieapp.R;
+import com.example.movieapp.activity.WelcomeScreenActivity;
 import com.example.movieapp.adapter.MovieHomeAdapter;
 import com.example.movieapp.adapter.MovieHomeCategoryAdapter;
 import com.example.movieapp.adapter.MovieSearchItemAdapter;
@@ -63,6 +69,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
     FragmentHomeBinding binding;
     Item item = new Item();
+    ProgressDialog progressDialog;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -110,6 +117,12 @@ public class HomeFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_home, container, false);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+
+
+
+        progressDialog = new ProgressDialog(getContext());
+        progressDialog.setMessage("Loading..."); // Thiết lập thông điệp
+        progressDialog.setCancelable(false); // Không thể hủy bỏ hộp thoại bằng cách nhấn ngoài hoặc nút back
 
         addEvents();
 //        addEvents();
@@ -369,6 +382,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void getData() {
+        progressDialog.show(); // Hiển thị hộp thoại
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -379,23 +394,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void run() {
                 getlistcategory("phim-le",binding.rcvPhimLe);
-            }
-        }).start();new Thread(new Runnable() {
-            @Override
-            public void run() {
                 getlistcategory("phim-bo",binding.rcvPhimBo);
-            }
-        }).start();new Thread(new Runnable() {
-            @Override
-            public void run() {
                 getlistcategory("tv-shows",binding.rcvTVShow);
-            }
-        }).start();new Thread(new Runnable() {
-            @Override
-            public void run() {
                 getlistcategory("hoat-hinh",binding.rcvAnime);
+                progressDialog.dismiss();
+
             }
         }).start();
+
 //        getlistnewupdate(binding.rcvPhimMoiCatNhat);
 //        getlistcategory("phim-le",binding.rcvPhimLe);
 //        getlistcategory("phim-bo",binding.rcvPhimBo);

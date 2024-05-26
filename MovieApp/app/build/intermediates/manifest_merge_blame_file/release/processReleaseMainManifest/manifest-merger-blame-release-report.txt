@@ -1,0 +1,268 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.movieapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="28"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+12-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:6:5-78
+12-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:6:22-75
+13
+14    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+15    <!-- <uses-sdk android:minSdkVersion="21"/> -->
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:22:5-79
+16-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:22:22-76
+17
+18    <permission
+18-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\transforms-3\84ecc0d56128e184269db48cab925cf6\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+19        android:name="com.example.movieapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+19-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\transforms-3\84ecc0d56128e184269db48cab925cf6\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+20        android:protectionLevel="signature" />
+20-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\transforms-3\84ecc0d56128e184269db48cab925cf6\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+21
+22    <uses-permission android:name="com.example.movieapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+22-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\transforms-3\84ecc0d56128e184269db48cab925cf6\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+22-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\transforms-3\84ecc0d56128e184269db48cab925cf6\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+23
+24    <application
+24-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:8:5-55:19
+25        android:allowBackup="true"
+25-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:9:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\transforms-3\84ecc0d56128e184269db48cab925cf6\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+27        android:dataExtractionRules="@xml/data_extraction_rules"
+27-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:10:9-65
+28        android:extractNativeLibs="false"
+29        android:fullBackupContent="@xml/backup_rules"
+29-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:11:9-54
+30        android:icon="@drawable/lohotan"
+30-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:12:9-41
+31        android:label="AppCuaDaiKa"
+31-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:13:9-36
+32        android:roundIcon="@mipmap/ic_logo_app_round"
+32-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:14:9-54
+33        android:supportsRtl="true"
+33-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:15:9-35
+34        android:theme="@style/Theme.MovieApp" >
+34-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:16:9-46
+35        <activity
+35-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:18:9-23:64
+36            android:name="com.example.movieapp.PlayMovieActivity"
+36-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:19:13-46
+37            android:configChanges="orientation|keyboardHidden|screenSize"
+37-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:20:13-74
+38            android:exported="false"
+38-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:21:13-37
+39            android:label="@string/title_activity_play_movie"
+39-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:22:13-62
+40            android:theme="@style/Theme.MovieApp.Fullscreen" />
+40-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:23:13-61
+41        <activity
+41-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:24:9-27:59
+42            android:name="com.example.movieapp.activity.ForgotPasswordActivity"
+42-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:25:13-60
+43            android:exported="false"
+43-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:26:13-37
+44            android:theme="@style/NetflixAppCloneTheme" />
+44-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:27:13-56
+45        <activity
+45-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:28:9-31:59
+46            android:name="com.example.movieapp.activity.LoginActivity"
+46-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:29:13-51
+47            android:exported="false"
+47-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:30:13-37
+48            android:theme="@style/NetflixAppCloneTheme" />
+48-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:31:13-56
+49        <activity
+49-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:32:9-35:59
+50            android:name="com.example.movieapp.activity.RegisterActivity"
+50-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:33:13-54
+51            android:exported="false"
+51-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:34:13-37
+52            android:theme="@style/NetflixAppCloneTheme" />
+52-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:35:13-56
+53        <activity
+53-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:36:9-39:59
+54            android:name="com.example.movieapp.activity.WelcomeScreenActivity"
+54-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:37:13-59
+55            android:exported="false"
+55-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:38:13-37
+56            android:theme="@style/NetflixAppCloneTheme" />
+56-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:39:13-56
+57        <activity
+57-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:40:9-50:20
+58            android:name="com.example.movieapp.activity.MainActivity"
+58-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:41:13-50
+59            android:configChanges="uiMode|orientation|screenSize|screenLayout"
+59-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:42:13-79
+60            android:exported="true"
+60-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:43:13-36
+61            android:theme="@style/NetflixAppCloneTheme" >
+61-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:44:13-56
+62            <intent-filter>
+62-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:45:13-49:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:46:17-69
+63-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:46:25-66
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:48:17-77
+65-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:48:27-74
+66            </intent-filter>
+67        </activity>
+68        <activity
+68-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:51:9-54:59
+69            android:name="com.example.movieapp.activity.SplashScreenActivity"
+69-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:52:13-58
+70            android:exported="false"
+70-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:53:13-37
+71            android:theme="@style/NetflixAppCloneTheme" />
+71-->D:\Android\WatchMoviesOnline\MovieApp\app\src\main\AndroidManifest.xml:54:13-56
+72
+73        <service
+73-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:26:9-35:19
+74            android:name="com.google.firebase.components.ComponentDiscoveryService"
+74-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:27:13-84
+75            android:directBootAware="true"
+75-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+76            android:exported="false" >
+76-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:28:13-37
+77            <meta-data
+77-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:29:13-31:85
+78                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+78-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:30:17-120
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:31:17-82
+80            <meta-data
+80-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:32:13-34:85
+81                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+81-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:33:17-109
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[com.google.firebase:firebase-database:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\0b8de9d60523de31b949b534480c52fd\transformed\jetified-firebase-database-21.0.0\AndroidManifest.xml:34:17-82
+83            <meta-data
+83-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\a69a71a07738b06b0e5c7856fb4dba1c\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+84                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+84-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\a69a71a07738b06b0e5c7856fb4dba1c\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\a69a71a07738b06b0e5c7856fb4dba1c\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+86            <meta-data
+86-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+87                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+87-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+88                android:value="com.google.firebase.components.ComponentRegistrar" />
+88-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+89        </service>
+90
+91        <activity
+91-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ACER\.gradle\caches\transforms-3\85e5dc2adff2d36a9cc34723e9429b4e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+92            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+92-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ACER\.gradle\caches\transforms-3\85e5dc2adff2d36a9cc34723e9429b4e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+93            android:exported="false"
+93-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ACER\.gradle\caches\transforms-3\85e5dc2adff2d36a9cc34723e9429b4e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+94            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+94-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\ACER\.gradle\caches\transforms-3\85e5dc2adff2d36a9cc34723e9429b4e\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+95
+96        <provider
+96-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+97            android:name="com.google.firebase.provider.FirebaseInitProvider"
+97-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+98            android:authorities="com.example.movieapp.firebaseinitprovider"
+98-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+99            android:directBootAware="true"
+99-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+100            android:exported="false"
+100-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+101            android:initOrder="100" />
+101-->[com.google.firebase:firebase-common:21.0.0] C:\Users\ACER\.gradle\caches\transforms-3\c4f960ddb03594aa527e0666e4302864\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+102        <provider
+102-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\transforms-3\de40002ef5383ec65e2307243936c7a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+103            android:name="androidx.startup.InitializationProvider"
+103-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\transforms-3\de40002ef5383ec65e2307243936c7a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+104            android:authorities="com.example.movieapp.androidx-startup"
+104-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\transforms-3\de40002ef5383ec65e2307243936c7a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+105            android:exported="false" >
+105-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\transforms-3\de40002ef5383ec65e2307243936c7a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+106            <meta-data
+106-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\transforms-3\de40002ef5383ec65e2307243936c7a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+107-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\transforms-3\de40002ef5383ec65e2307243936c7a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+108                android:value="androidx.startup" />
+108-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\transforms-3\de40002ef5383ec65e2307243936c7a3\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+109            <meta-data
+109-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\ACER\.gradle\caches\transforms-3\bda366bcf889514306adc1c82b0a014b\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+110                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+110-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\ACER\.gradle\caches\transforms-3\bda366bcf889514306adc1c82b0a014b\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+111                android:value="androidx.startup" />
+111-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\ACER\.gradle\caches\transforms-3\bda366bcf889514306adc1c82b0a014b\transformed\jetified-lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+112            <meta-data
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+113                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+114                android:value="androidx.startup" />
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+115        </provider>
+116
+117        <meta-data
+117-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\ACER\.gradle\caches\transforms-3\7589c52fee4638c3b6bd668f401fb104\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+118            android:name="com.google.android.gms.version"
+118-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\ACER\.gradle\caches\transforms-3\7589c52fee4638c3b6bd668f401fb104\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+119            android:value="@integer/google_play_services_version" />
+119-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\ACER\.gradle\caches\transforms-3\7589c52fee4638c3b6bd668f401fb104\transformed\jetified-play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+120
+121        <provider
+121-->[com.squareup.picasso:picasso:2.71828] C:\Users\ACER\.gradle\caches\transforms-3\68e789ee0bf1da936eb5ad77cdf21fb1\transformed\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+122            android:name="com.squareup.picasso.PicassoProvider"
+122-->[com.squareup.picasso:picasso:2.71828] C:\Users\ACER\.gradle\caches\transforms-3\68e789ee0bf1da936eb5ad77cdf21fb1\transformed\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+123            android:authorities="com.example.movieapp.com.squareup.picasso"
+123-->[com.squareup.picasso:picasso:2.71828] C:\Users\ACER\.gradle\caches\transforms-3\68e789ee0bf1da936eb5ad77cdf21fb1\transformed\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+124            android:exported="false" />
+124-->[com.squareup.picasso:picasso:2.71828] C:\Users\ACER\.gradle\caches\transforms-3\68e789ee0bf1da936eb5ad77cdf21fb1\transformed\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+125
+126        <receiver
+126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+127            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+128            android:directBootAware="false"
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+129            android:enabled="true"
+129-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+130            android:exported="true"
+130-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+131            android:permission="android.permission.DUMP" >
+131-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+132            <intent-filter>
+132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+133                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+133-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+133-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+134            </intent-filter>
+135            <intent-filter>
+135-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+136                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+136-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+136-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+137            </intent-filter>
+138            <intent-filter>
+138-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+139                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+139-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+139-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+140            </intent-filter>
+141            <intent-filter>
+141-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+142                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+142-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+142-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ACER\.gradle\caches\transforms-3\5c53e4c9ee71e6d259ec33851f77c0cd\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+143            </intent-filter>
+144        </receiver>
+145    </application>
+146
+147</manifest>

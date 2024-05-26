@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginTop="8dp"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvItemCate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/my_list"
+        android:textSize="14sp"
+        android:textColor="@color/slate_200"
+        android:fontFamily="@font/poppins_semibold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvMovieCateList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/movie_image_item"/>
+
+
+</LinearLayout>

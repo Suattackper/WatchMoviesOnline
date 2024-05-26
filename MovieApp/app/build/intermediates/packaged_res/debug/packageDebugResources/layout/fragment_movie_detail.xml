@@ -124,7 +124,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/slate_300"
                     android:textSize="15sp"
-                    android:text="07 Agu 202307" />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/tvTypeMovie"
