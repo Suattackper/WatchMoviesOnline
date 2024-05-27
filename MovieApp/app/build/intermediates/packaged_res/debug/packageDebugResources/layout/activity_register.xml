@@ -38,13 +38,13 @@
                 android:id="@+id/imvLogoApp"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="76dp"
                 android:padding="10dp"
                 android:src="@drawable/icon_netflix"
                 app:layout_constraintBottom_toBottomOf="@id/lyToolbar"
                 app:layout_constraintStart_toEndOf="@+id/imvBack"
                 app:layout_constraintTop_toTopOf="@id/lyToolbar"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -133,11 +133,11 @@
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editPhone"
+                        android:id="@+id/editUserName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/phone"
-                        android:inputType="phone|number" />
+                        android:hint="User Name"
+                        android:inputType="text" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,6 +154,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editPasswordConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirm Password"
                         android:inputType="textPassword" />
 
                 </com.google.android.material.textfield.TextInputLayout>

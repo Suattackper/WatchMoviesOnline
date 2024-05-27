@@ -1499,6 +1499,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -2344,6 +2348,8 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen appcompat_dialog_background_inset
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -3324,6 +3330,9 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_other_sign_in
+drawable ic_passkey
+drawable ic_password
 drawable ic_search_black_24
 drawable icon_netflix
 drawable icon_watch_list
@@ -3579,12 +3588,18 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id btbtvAnime
 id btbtvPhimBo
 id btbtvPhimLe
 id btbtvTVShows
 id btnAnime
 id btnBookmark
+id btnChange
 id btnCreateAcc
 id btnDelete
 id btnDownload
@@ -3701,8 +3716,13 @@ id east
 id edge
 id editEmail
 id editPassword
+id editPasswordConfirm
+id editPasswordCur
+id editPasswordNew
+id editPasswordNewConfirm
 id editPhone
 id editSearch
+id editUserName
 id edit_query
 id edtTapPhim
 id elastic
@@ -4198,6 +4218,7 @@ id tvTypeMovie
 id tvUserName
 id tvWatchList
 id tvXemTapPhim
+id txtChangePass
 id txtCreateAcc
 id txtForgotPass
 id txtSignin
@@ -4348,6 +4369,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_change_password
 layout activity_forgot_password
 layout activity_login
 layout activity_main
@@ -4355,6 +4377,8 @@ layout activity_play_movie
 layout activity_register
 layout activity_splash_screen
 layout activity_welcome_screen
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout change_password_dialog
 layout custom_dialog
 layout custom_player_control_view
@@ -4530,6 +4554,8 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string acc_name
 string account
+string android_credentials_TYPE_PASSWORD_CREDENTIAL
+string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -4576,6 +4602,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string confirm_log_out
 string continue_watching
+string copy_toast_msg
 string create_new
 string create_new_acc
 string delete
@@ -4646,6 +4673,9 @@ string exo_track_unknown
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fallback_menu_item_copy_link
+string fallback_menu_item_open_in_browser
+string fallback_menu_item_share_link
 string firebase_database_url
 string forgot_pass
 string gcm_defaultSenderId
@@ -5418,6 +5448,7 @@ style Theme_Design_Light
 style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
+style Theme_Hidden
 style Theme_Material3_Dark
 style Theme_Material3_Dark_BottomSheetDialog
 style Theme_Material3_Dark_Dialog
@@ -6165,3 +6196,4 @@ styleable YouTubePlayerView autoPlay enableAutomaticInitialization handleNetwork
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml image_share_filepaths

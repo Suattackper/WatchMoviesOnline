@@ -39,11 +39,12 @@ public class WatchListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       binding = FragmentWatchListBinding.inflate(inflater, container,false);
+        binding = FragmentWatchListBinding.inflate(inflater, container,false);
+        View view = binding.getRoot();
 
-        initUI();
+        getData();
 
-       return binding.getRoot();
+       return view;
     }
 
     @Override
@@ -52,15 +53,19 @@ public class WatchListFragment extends Fragment {
 
     }
 
-    private void initUI() {
+    private void getData() {
 
         // Nhận chuỗi JSON từ SharedPreferences
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String json = sharedPreferences.getString("jsonaccount", "");
-        String index = sharedPreferences.getString("index", "");
         // Chuyển đổi chuỗi JSON thành object
         Gson gson = new Gson();
         Account account = gson.fromJson(json, Account.class);
+
+        if(account.getAccountList() == null || account.getAccountList().isEmpty()){
+            binding.tvWatchList.setText("Watch List chưa có phim!");
+            return;
+        }
 
         if(account.getAccountList()!=null){
             List<AccountList> accountLists = new ArrayList<>();
@@ -68,12 +73,9 @@ public class WatchListFragment extends Fragment {
                 accountLists.add(item);
             }
             LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
-            ListMovieAdapter adapter = new ListMovieAdapter(accountLists, getContext(),account,index);
+            ListMovieAdapter adapter = new ListMovieAdapter(accountLists, getContext(),account,String.valueOf(account.getIndex()));
             binding.rcvWatchList.setAdapter(adapter);
             binding.rcvWatchList.setLayoutManager(manager);
-        }
-        else {
-            binding.tvWatchList.setText("Watch List chưa có phim!");
         }
     }
 }

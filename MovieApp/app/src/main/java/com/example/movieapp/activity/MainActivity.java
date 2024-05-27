@@ -1,5 +1,7 @@
 package com.example.movieapp.activity;
 
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -9,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import com.example.movieapp.PlayMovieActivity;
 import com.example.movieapp.R;
 import com.example.movieapp.databinding.ActivityMainBinding;
 import com.example.movieapp.fragment.DownloadFragment;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         replaceFragmentUI(new HomeFragment());

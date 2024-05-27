@@ -1,5 +1,6 @@
 package com.example.movieapp.fragment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -16,10 +17,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.movieapp.CategoryFragment;
+import com.example.movieapp.ChangePasswordActivity;
 import com.example.movieapp.R;
 
+import com.example.movieapp.activity.LoginActivity;
+import com.example.movieapp.activity.MainActivity;
+import com.example.movieapp.activity.SplashScreenActivity;
+import com.example.movieapp.activity.WelcomeScreenActivity;
 import com.example.movieapp.databinding.FragmentMoreBinding;
 import com.example.movieapp.model.Account;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -41,6 +48,21 @@ public class MoreFragment extends Fragment {
     }
 
     private void addEvents() {
+        binding.lnlAcccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ChangePasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.lnlLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+                FirebaseAuth.getInstance().signOut();
+            }
+        });
         binding.imvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

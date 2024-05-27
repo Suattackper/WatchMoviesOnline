@@ -4,15 +4,33 @@ import java.util.List;
 import com.example.movieapp.model.AccountList;
 
 public class Account {
-    private int AccountCode;
+    private String AccountCode;
     private String Email;
     private List<AccountList> AccountList;
     private String Name;
     private String Password;
     private String PhoneNumber;
     private String Image;
+    private Boolean Status;
+    private int Index;
 
     public Account() {
+    }
+
+    public int getIndex() {
+        return Index;
+    }
+
+    public void setIndex(int index) {
+        Index = index;
+    }
+
+    public Boolean getStatus() {
+        return Status;
+    }
+
+    public void setStatus(Boolean status) {
+        Status = status;
     }
 
     public List<AccountList> getAccountList() {
@@ -23,11 +41,11 @@ public class Account {
         AccountList = accountList;
     }
 
-    public int getAccountCode() {
+    public String getAccountCode() {
         return AccountCode;
     }
 
-    public void setAccountCode(int accountCode) {
+    public void setAccountCode(String accountCode) {
         AccountCode = accountCode;
     }
 

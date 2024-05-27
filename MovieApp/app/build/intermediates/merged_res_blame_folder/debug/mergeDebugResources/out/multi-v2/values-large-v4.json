@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.movieapp-mergeDebugResources-50:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.example.movieapp-mergeDebugResources-54:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\a376ce666fb3714ea6fceeca27d12d52\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\23da5502bc9f12594f5b3e48777da50e\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\84cc6db11bdf629d628a7fcee04e72bd\\transformed\\material-1.10.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\8176dc426ae38e53b4ab16a2cf3aa390\\transformed\\material-1.10.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

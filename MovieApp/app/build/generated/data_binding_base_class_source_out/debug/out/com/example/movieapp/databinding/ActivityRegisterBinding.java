@@ -35,7 +35,10 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextInputEditText editPassword;
 
   @NonNull
-  public final TextInputEditText editPhone;
+  public final TextInputEditText editPasswordConfirm;
+
+  @NonNull
+  public final TextInputEditText editUserName;
 
   @NonNull
   public final AppCompatImageView imvBack;
@@ -63,16 +66,17 @@ public final class ActivityRegisterBinding implements ViewBinding {
 
   private ActivityRegisterBinding(@NonNull ScrollView rootView, @NonNull AppCompatButton btnSignup,
       @NonNull TextInputEditText editEmail, @NonNull TextInputEditText editPassword,
-      @NonNull TextInputEditText editPhone, @NonNull AppCompatImageView imvBack,
-      @NonNull AppCompatImageView imvLogoApp, @NonNull ConstraintLayout lyDescIntro,
-      @NonNull ConstraintLayout lySigninAuth, @NonNull ConstraintLayout lyToolbar,
-      @NonNull LinearLayout main, @NonNull AppCompatTextView txtSignin,
-      @NonNull TextView txtSigninLabel) {
+      @NonNull TextInputEditText editPasswordConfirm, @NonNull TextInputEditText editUserName,
+      @NonNull AppCompatImageView imvBack, @NonNull AppCompatImageView imvLogoApp,
+      @NonNull ConstraintLayout lyDescIntro, @NonNull ConstraintLayout lySigninAuth,
+      @NonNull ConstraintLayout lyToolbar, @NonNull LinearLayout main,
+      @NonNull AppCompatTextView txtSignin, @NonNull TextView txtSigninLabel) {
     this.rootView = rootView;
     this.btnSignup = btnSignup;
     this.editEmail = editEmail;
     this.editPassword = editPassword;
-    this.editPhone = editPhone;
+    this.editPasswordConfirm = editPasswordConfirm;
+    this.editUserName = editUserName;
     this.imvBack = imvBack;
     this.imvLogoApp = imvLogoApp;
     this.lyDescIntro = lyDescIntro;
@@ -128,9 +132,15 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.editPhone;
-      TextInputEditText editPhone = ViewBindings.findChildViewById(rootView, id);
-      if (editPhone == null) {
+      id = R.id.editPasswordConfirm;
+      TextInputEditText editPasswordConfirm = ViewBindings.findChildViewById(rootView, id);
+      if (editPasswordConfirm == null) {
+        break missingId;
+      }
+
+      id = R.id.editUserName;
+      TextInputEditText editUserName = ViewBindings.findChildViewById(rootView, id);
+      if (editUserName == null) {
         break missingId;
       }
 
@@ -183,8 +193,8 @@ public final class ActivityRegisterBinding implements ViewBinding {
       }
 
       return new ActivityRegisterBinding((ScrollView) rootView, btnSignup, editEmail, editPassword,
-          editPhone, imvBack, imvLogoApp, lyDescIntro, lySigninAuth, lyToolbar, main, txtSignin,
-          txtSigninLabel);
+          editPasswordConfirm, editUserName, imvBack, imvLogoApp, lyDescIntro, lySigninAuth,
+          lyToolbar, main, txtSignin, txtSigninLabel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

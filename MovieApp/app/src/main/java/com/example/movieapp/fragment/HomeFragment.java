@@ -69,7 +69,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
     FragmentHomeBinding binding;
     Item item = new Item();
-    ProgressDialog progressDialog;
+//    ProgressDialog progressDialog;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -118,70 +118,121 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-
-
-        progressDialog = new ProgressDialog(getContext());
-        progressDialog.setMessage("Loading..."); // Thiết lập thông điệp
-        progressDialog.setCancelable(false); // Không thể hủy bỏ hộp thoại bằng cách nhấn ngoài hoặc nút back
-
-        addEvents();
-//        addEvents();
-        getData();
-
-        //DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Account");
-        //Query query = myRef.orderByChild("AccountCode").equalTo(1);
+//        progressDialog = new ProgressDialog(getContext());
+//        progressDialog.setMessage("Loading..."); // Thiết lập thông điệp
+//        progressDialog.setCancelable(false); // Không thể hủy bỏ hộp thoại bằng cách nhấn ngoài hoặc nút back
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                // Lắng nghe sự kiện khi dữ liệu thay đổi
-                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Account");
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        List<Account> accounts = new ArrayList<>();
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Account account = snapshot.getValue(Account.class);
-                            accounts.add(account);
-                        }
-                        // Xủ lý dữ liệu sau khi lấy được danh sách
-                        Account account = new Account();
-                        int i = 0;
-                        for (Account item:accounts
-                        ) {
-                            if (item.getAccountCode()==0){
-                                account=item;
-                                break;
-                            }
-                            i++;
-                        }
-
-                        //set image bằng picasso
-                        String imageUrl = account.getImage();
-                        Picasso.get().load(imageUrl).into(binding.imvUserAvatar);
-                        // Lưu trữ giá trị
-                        Gson gson = new Gson();
-                        String json = gson.toJson(account);
-
-                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.clear(); // Xóa tất cả dữ liệu trong SharedPreferences
-                        editor.putString("jsonaccount", json);
-                        editor.putString("index", String.valueOf(i));
-                        editor.apply();
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        // Xử lý nếu có lỗi xảy ra
-                    }
-                });
+                addEvents();
             }
         }).start();
+
+        getData();
+
+        // Nhận chuỗi JSON từ SharedPreferences
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String json = sharedPreferences.getString("jsonaccount", "");
+
+        // Chuyển đổi chuỗi JSON thành object
+        Gson gson = new Gson();
+        Account account = gson.fromJson(json, Account.class);
+
+        //set image bằng picasso
+        String imageUrl = account.getImage();
+        Picasso.get().load(imageUrl).into(binding.imvUserAvatar);
 
         return view;
     }
 
+    private void getData() {
+//        progressDialog.show(); // Hiển thị hộp thoại
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistnewupdate(binding.rcvPhimMoiCatNhat);
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                getlistcategory("phim-le",binding.rcvPhimLe);
+                getlistcategory("phim-bo",binding.rcvPhimBo);
+                getlistcategory("tv-shows",binding.rcvTVShow);
+                getlistcategory("hoat-hinh",binding.rcvAnime);
+//                try {
+//                    Thread.sleep(2000);
+//                } catch (InterruptedException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                progressDialog.dismiss();
+            }
+        }).start();
+    }
+
+    private void getlistnewupdate(RecyclerView rcv) {
+        ApiService.apiService.getMovieList(1).enqueue(new Callback<MovieList>() {
+            @Override
+            public void onResponse(Call<MovieList> call, Response<MovieList> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        MovieList movielist = response.body();
+                        item = movielist.getItems().get(0);
+
+                        String imageUrl = item.getThumb_url();
+                        Picasso.get().load(imageUrl).into(binding.imvBanner);
+
+                        LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+
+                        MovieHomeAdapter adapter = new MovieHomeAdapter(movielist.getItems(), getContext());
+                        rcv.setLayoutManager(manager);
+                        rcv.setAdapter(adapter);
+
+                    }
+                    catch (Exception e){
+                        Log.e("HomeFragment", e.getMessage());
+                    }
+                } else {
+                    Toast.makeText(getContext(), "Có lỗi xảy rafff", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<MovieList> call, Throwable throwable) {
+                Toast.makeText(getContext(), "Có lỗi xảy raafff", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void getlistcategory(String s, RecyclerView rcv) {
+        ApiService.apiService.getMovieListCategory(s,1).enqueue(new Callback<MovieSearch>() {
+            @Override
+            public void onResponse(Call<MovieSearch> call, Response<MovieSearch> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        MovieSearch movieSearch = response.body();
+
+                        LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+
+                        MovieHomeCategoryAdapter adapter = new MovieHomeCategoryAdapter(movieSearch.getData().getItems(), getContext(),movieSearch.getData().getAPP_DOMAIN_CDN_IMAGE());
+
+                        rcv.setLayoutManager(manager);
+                        rcv.setAdapter(adapter);
+
+                    }
+                    catch (Exception e){
+                        Log.e("HomeFragment", e.getMessage());
+                    }
+                } else {
+                    Toast.makeText(getContext(), "Có lỗi xảy ra1", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<MovieSearch> call, Throwable throwable) {
+                Toast.makeText(getContext(), "Có lỗi xảy raa1", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     private void addEvents() {
         binding.btnPhimBo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -379,95 +430,5 @@ public class HomeFragment extends Fragment {
         transaction.replace(R.id.frameLayout, fragment); // frameLayout là id của container cho Fragment
         transaction.addToBackStack(null); // (Optional) Đưa Fragment vào Stack để quay lại
         transaction.commit();
-    }
-
-    private void getData() {
-        progressDialog.show(); // Hiển thị hộp thoại
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                getlistnewupdate(binding.rcvPhimMoiCatNhat);
-            }
-        }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                getlistcategory("phim-le",binding.rcvPhimLe);
-                getlistcategory("phim-bo",binding.rcvPhimBo);
-                getlistcategory("tv-shows",binding.rcvTVShow);
-                getlistcategory("hoat-hinh",binding.rcvAnime);
-                progressDialog.dismiss();
-
-            }
-        }).start();
-
-//        getlistnewupdate(binding.rcvPhimMoiCatNhat);
-//        getlistcategory("phim-le",binding.rcvPhimLe);
-//        getlistcategory("phim-bo",binding.rcvPhimBo);
-//        getlistcategory("tv-shows",binding.rcvTVShow);
-//        getlistcategory("hoat-hinh",binding.rcvAnime);
-    }
-
-    private void getlistnewupdate(RecyclerView rcv) {
-        ApiService.apiService.getMovieList(1).enqueue(new Callback<MovieList>() {
-            @Override
-            public void onResponse(Call<MovieList> call, Response<MovieList> response) {
-                if (response.isSuccessful()) {
-                    try {
-                        MovieList movielist = response.body();
-                        item = movielist.getItems().get(0);
-
-                        String imageUrl = item.getThumb_url();
-                        Picasso.get().load(imageUrl).into(binding.imvBanner);
-
-                        LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
-
-                        MovieHomeAdapter adapter = new MovieHomeAdapter(movielist.getItems(), getContext());
-                        rcv.setLayoutManager(manager);
-                        rcv.setAdapter(adapter);
-
-                    }
-                    catch (Exception e){
-                        Log.e("HomeFragment", e.getMessage());
-                    }
-                } else {
-                    Toast.makeText(getContext(), "Có lỗi xảy rafff", Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onFailure(Call<MovieList> call, Throwable throwable) {
-                Toast.makeText(getContext(), "Có lỗi xảy raafff", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-    private void getlistcategory(String s, RecyclerView rcv) {
-        ApiService.apiService.getMovieListCategory(s,1).enqueue(new Callback<MovieSearch>() {
-            @Override
-            public void onResponse(Call<MovieSearch> call, Response<MovieSearch> response) {
-                if (response.isSuccessful()) {
-                    try {
-                        MovieSearch movieSearch = response.body();
-
-                        LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
-
-                        MovieHomeCategoryAdapter adapter = new MovieHomeCategoryAdapter(movieSearch.getData().getItems(), getContext(),movieSearch.getData().getAPP_DOMAIN_CDN_IMAGE());
-
-                        rcv.setLayoutManager(manager);
-                        rcv.setAdapter(adapter);
-
-                    }
-                    catch (Exception e){
-                        Log.e("HomeFragment", e.getMessage());
-                    }
-                } else {
-                    Toast.makeText(getContext(), "Có lỗi xảy ra1", Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onFailure(Call<MovieSearch> call, Throwable throwable) {
-                Toast.makeText(getContext(), "Có lỗi xảy raa1", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }

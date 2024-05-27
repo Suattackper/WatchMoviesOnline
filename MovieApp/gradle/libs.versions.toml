@@ -22,6 +22,7 @@ shimmer = "0.5.0"
 viewpager2 = "1.0.0"
 googleGmsGoogleServices = "4.4.1"
 firebaseDatabase = "21.0.0"
+firebaseAuth = "23.0.0"
 
 [libraries]
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
@@ -50,6 +51,7 @@ navigation-runtime = { group = "androidx.navigation", name = "navigation-runtime
 shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
 viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

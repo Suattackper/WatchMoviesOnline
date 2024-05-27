@@ -158,6 +158,7 @@ id btbtvPhimLe
 id btbtvTVShows
 id btnAnime
 id btnBookmark
+id btnChange
 id btnCreateAcc
 id btnDelete
 id btnDownload
@@ -198,8 +199,13 @@ id cvTrailerMovie_More
 id deleteBtn
 id editEmail
 id editPassword
+id editPasswordConfirm
+id editPasswordCur
+id editPasswordNew
+id editPasswordNewConfirm
 id editPhone
 id editSearch
+id editUserName
 id edtTapPhim
 id filterButton
 id filterLayout
@@ -319,12 +325,14 @@ id tvTypeMovie
 id tvUserName
 id tvWatchList
 id tvXemTapPhim
+id txtChangePass
 id txtCreateAcc
 id txtForgotPass
 id txtSignin
 id txtSigninLabel
 id viewPager
 id ytbPlayer
+layout activity_change_password
 layout activity_forgot_password
 layout activity_login
 layout activity_main

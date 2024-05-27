@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.movieapp-mergeDebugResources-50:/values-v22/values-v22.xml",
+            "outputFile": "com.example.movieapp-mergeDebugResources-54:/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\a376ce666fb3714ea6fceeca27d12d52\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\23da5502bc9f12594f5b3e48777da50e\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

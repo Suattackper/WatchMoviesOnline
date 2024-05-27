@@ -30,6 +30,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.movieapp.R;
+import com.example.movieapp.activity.LoginActivity;
 import com.example.movieapp.fragment.MovieDetailFragment;
 import com.example.movieapp.fragment.WatchListFragment;
 import com.example.movieapp.model.Account;
@@ -124,6 +125,15 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
                         DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Account/" + index);
                         account.getAccountList().remove(position);
                         myRef.setValue(account);
+
+                        Gson gson = new Gson();
+                        String json = gson.toJson(account);
+
+                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.clear(); // Xóa tất cả dữ liệu trong SharedPreferences
+                        editor.putString("jsonaccount", json);
+                        editor.apply();
 
                         listDetails.remove(position);
                         notifyDataSetChanged();

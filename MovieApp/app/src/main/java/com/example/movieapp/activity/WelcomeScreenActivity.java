@@ -31,21 +31,14 @@ public class WelcomeScreenActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
-//        binding.btnLogBackIn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-//                finish();
-//            }
-//        });
-//
-//        binding.btnCreateAcc.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-//                finish();
-//            }
-//        });
+
+        binding.btnCreateAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+                finish();
+            }
+        });
     }
 
 

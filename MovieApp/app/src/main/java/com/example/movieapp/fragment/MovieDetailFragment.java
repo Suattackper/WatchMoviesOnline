@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.airbnb.lottie.L;
 import com.example.movieapp.PlayMovieActivity;
 import com.example.movieapp.R;
+import com.example.movieapp.activity.LoginActivity;
 import com.example.movieapp.adapter.MovieEpisodesAdapter;
 import com.example.movieapp.adapter.MovieSearchItemAdapter;
 import com.example.movieapp.api.ApiService;
@@ -187,7 +188,6 @@ public class MovieDetailFragment extends Fragment {
                 // Nhận chuỗi JSON từ SharedPreferences
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
                 String json = sharedPreferences.getString("jsonaccount", "");
-                String index = sharedPreferences.getString("index", "");
 
                 // Chuyển đổi chuỗi JSON thành object
                 Gson gson = new Gson();
@@ -209,8 +209,15 @@ public class MovieDetailFragment extends Fragment {
                 if(check){
                     account.getAccountList().add(accountList);
                     //Sửa dữ liệu vào firebase
-                    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Account/" + index);
+                    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Account/" + account.getIndex());
                     myRef.setValue(account);
+
+                    String jsonupdate = gson.toJson(account);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.clear(); // Xóa tất cả dữ liệu trong SharedPreferences
+                    editor.putString("jsonaccount", jsonupdate);
+                    editor.apply();
+
                     Toast.makeText(getContext(), "Đã thêm vào Watch List!", Toast.LENGTH_SHORT).show();
                 }
                 else Toast.makeText(getContext(), "Phim đã có trong Watch List!", Toast.LENGTH_SHORT).show();
