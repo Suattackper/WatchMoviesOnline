@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.example.movieapp-mergeDebugResources-55:/layout/activity_change_password.xml",
-        "source": "com.example.movieapp-main-58:/layout/activity_change_password.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-55:\\layout\\activity_forgot_password.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\activity_forgot_password.xml"
     },
@@ -46,6 +42,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-55:\\layout\\fragment_home.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "com.example.movieapp-mergeDebugResources-55:/layout/activity_forgot_password.xml",
+        "source": "com.example.movieapp-main-58:/layout/activity_forgot_password.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-55:\\layout\\fragment_delete_download.xml",
@@ -144,6 +144,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\fragment_list_playing_series_home.xml"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-55:\\layout\\activity_change_password.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\activity_change_password.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-55:\\layout\\fragment_cast_movies.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\fragment_cast_movies.xml"
     },
@@ -166,10 +170,6 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-55:\\layout\\movie_episode_item.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\movie_episode_item.xml"
-    },
-    {
-        "merged": "com.example.movieapp-mergeDebugResources-55:/layout/activity_register.xml",
-        "source": "com.example.movieapp-main-58:/layout/activity_register.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-mergeDebugResources-55:\\layout\\fragment_movie_detail.xml",

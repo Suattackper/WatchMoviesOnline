@@ -70,9 +70,10 @@ public class ChangePasswordActivity extends AppCompatActivity {
         binding.imvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChangePasswordActivity.this, MainActivity.class);
-                startActivity(intent);
-                finishAffinity();
+//                Intent intent = new Intent(ChangePasswordActivity.this, MainActivity.class);
+//                startActivity(intent);
+//                finishAffinity();
+                finish();
             }
         });
 
@@ -83,28 +84,28 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 String passold = binding.editPasswordCur.getText().toString().trim();
                 String passnewcf = binding.editPasswordNewConfirm.getText().toString().trim();
 
-                if(passnew.equals("") || passnew==null || passold.equals("") || passold==null || passnewcf.equals("") || passnewcf==null){
+                if(passnew.equals("") || passnew==null || passnewcf.equals("") || passnewcf==null){
                     Toast.makeText(ChangePasswordActivity.this, "Vui lòng nhập đầy đủ!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 // Kiểm tra độ dài của mật khẩu (ít nhất 6 ký tự)
-                if (passnew.length() < 6 || passold.length() < 6 || passnewcf.length() < 6) {
+                if (passnew.length() < 6 || passnewcf.length() < 6) {
                     Toast.makeText(ChangePasswordActivity.this, "Mật khẩu phải có ít nhất 6 ký tự!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 // Kiểm tra xem mật khẩu có chứa ít nhất một chữ cái viết hoa
-                if (!passnewcf.matches(".*[A-Z].*") || !passnew.matches(".*[A-Z].*") || !passold.matches(".*[A-Z].*")) {
+                if (!passnewcf.matches(".*[A-Z].*") || !passnew.matches(".*[A-Z].*")) {
                     Toast.makeText(ChangePasswordActivity.this, "Mật khẩu phải chứa ít nhất một chữ cái viết hoa!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 // Kiểm tra xem mật khẩu có chứa ít nhất một chữ cái viết thường
-                if (!passnewcf.matches(".*[a-z].*") || !passnew.matches(".*[a-z].*") || !passold.matches(".*[a-z].*")) {
+                if (!passnewcf.matches(".*[a-z].*") || !passnew.matches(".*[a-z].*")) {
                     Toast.makeText(ChangePasswordActivity.this, "Mật khẩu phải chứa ít nhất một chữ cái viết thường!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 // Kiểm tra xem mật khẩu có chứa ít nhất một ký tự đặc biệt
-                if (!passnewcf.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?].*") || !passnew.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?].*") || !passold.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?].*")) {
+                if (!passnewcf.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?].*") || !passnew.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?].*")) {
                     Toast.makeText(ChangePasswordActivity.this, "Mật khẩu phải chứa ít nhất một ký tự đặc biệt!", Toast.LENGTH_SHORT).show();
                     return;
                 }

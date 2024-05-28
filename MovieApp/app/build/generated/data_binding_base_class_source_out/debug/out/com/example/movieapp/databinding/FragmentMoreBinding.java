@@ -4,7 +4,6 @@ package com.example.movieapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -38,9 +37,6 @@ public final class FragmentMoreBinding implements ViewBinding {
   public final ImageView arrowOpenWatch;
 
   @NonNull
-  public final CheckBox btnModeToggle;
-
-  @NonNull
   public final Guideline guideline1;
 
   @NonNull
@@ -57,6 +53,9 @@ public final class FragmentMoreBinding implements ViewBinding {
 
   @NonNull
   public final LinearLayout lnlAcccount;
+
+  @NonNull
+  public final LinearLayout lnlAcccountChange;
 
   @NonNull
   public final LinearLayout lnlLogout;
@@ -81,25 +80,26 @@ public final class FragmentMoreBinding implements ViewBinding {
 
   private FragmentMoreBinding(@NonNull NestedScrollView rootView, @NonNull ImageView arrowLogout,
       @NonNull ImageView arrowOpenAcc, @NonNull ImageView arrowOpenNoti,
-      @NonNull ImageView arrowOpenWatch, @NonNull CheckBox btnModeToggle,
-      @NonNull Guideline guideline1, @NonNull Guideline guideline2, @NonNull ImageView imvAvatar,
+      @NonNull ImageView arrowOpenWatch, @NonNull Guideline guideline1,
+      @NonNull Guideline guideline2, @NonNull ImageView imvAvatar,
       @NonNull AppCompatImageView imvBack, @NonNull AppCompatImageView imvLogoApp,
-      @NonNull LinearLayout lnlAcccount, @NonNull LinearLayout lnlLogout,
-      @NonNull LinearLayout lnlNotification, @NonNull LinearLayout lnlProfile,
-      @NonNull LinearLayout lnlSettings, @NonNull LinearLayout lnlWatchList,
-      @NonNull ConstraintLayout toolBar, @NonNull TextView tvUserName) {
+      @NonNull LinearLayout lnlAcccount, @NonNull LinearLayout lnlAcccountChange,
+      @NonNull LinearLayout lnlLogout, @NonNull LinearLayout lnlNotification,
+      @NonNull LinearLayout lnlProfile, @NonNull LinearLayout lnlSettings,
+      @NonNull LinearLayout lnlWatchList, @NonNull ConstraintLayout toolBar,
+      @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.arrowLogout = arrowLogout;
     this.arrowOpenAcc = arrowOpenAcc;
     this.arrowOpenNoti = arrowOpenNoti;
     this.arrowOpenWatch = arrowOpenWatch;
-    this.btnModeToggle = btnModeToggle;
     this.guideline1 = guideline1;
     this.guideline2 = guideline2;
     this.imvAvatar = imvAvatar;
     this.imvBack = imvBack;
     this.imvLogoApp = imvLogoApp;
     this.lnlAcccount = lnlAcccount;
+    this.lnlAcccountChange = lnlAcccountChange;
     this.lnlLogout = lnlLogout;
     this.lnlNotification = lnlNotification;
     this.lnlProfile = lnlProfile;
@@ -160,12 +160,6 @@ public final class FragmentMoreBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnModeToggle;
-      CheckBox btnModeToggle = ViewBindings.findChildViewById(rootView, id);
-      if (btnModeToggle == null) {
-        break missingId;
-      }
-
       id = R.id.guideline1;
       Guideline guideline1 = ViewBindings.findChildViewById(rootView, id);
       if (guideline1 == null) {
@@ -199,6 +193,12 @@ public final class FragmentMoreBinding implements ViewBinding {
       id = R.id.lnlAcccount;
       LinearLayout lnlAcccount = ViewBindings.findChildViewById(rootView, id);
       if (lnlAcccount == null) {
+        break missingId;
+      }
+
+      id = R.id.lnlAcccountChange;
+      LinearLayout lnlAcccountChange = ViewBindings.findChildViewById(rootView, id);
+      if (lnlAcccountChange == null) {
         break missingId;
       }
 
@@ -245,8 +245,8 @@ public final class FragmentMoreBinding implements ViewBinding {
       }
 
       return new FragmentMoreBinding((NestedScrollView) rootView, arrowLogout, arrowOpenAcc,
-          arrowOpenNoti, arrowOpenWatch, btnModeToggle, guideline1, guideline2, imvAvatar, imvBack,
-          imvLogoApp, lnlAcccount, lnlLogout, lnlNotification, lnlProfile, lnlSettings,
+          arrowOpenNoti, arrowOpenWatch, guideline1, guideline2, imvAvatar, imvBack, imvLogoApp,
+          lnlAcccount, lnlAcccountChange, lnlLogout, lnlNotification, lnlProfile, lnlSettings,
           lnlWatchList, toolBar, tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);

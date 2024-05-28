@@ -51,6 +51,12 @@ public class MoreFragment extends Fragment {
         binding.lnlAcccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+            }
+        });
+        binding.lnlAcccountChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(getContext(), ChangePasswordActivity.class);
                 startActivity(intent);
             }

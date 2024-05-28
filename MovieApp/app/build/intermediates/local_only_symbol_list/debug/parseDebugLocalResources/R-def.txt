@@ -162,9 +162,9 @@ id btnChange
 id btnCreateAcc
 id btnDelete
 id btnDownload
+id btnEnter
 id btnHome
 id btnInfoMovie
-id btnModeToggle
 id btnMore
 id btnMyList
 id btnPhimBo
@@ -240,6 +240,7 @@ id layoutsingle
 id lnEmptyList
 id lnMovieInfo
 id lnlAcccount
+id lnlAcccountChange
 id lnlLogout
 id lnlNotification
 id lnlProfile

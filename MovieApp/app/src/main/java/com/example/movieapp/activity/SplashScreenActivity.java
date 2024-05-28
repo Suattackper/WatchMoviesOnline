@@ -80,7 +80,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                                 finishAffinity();
                             }
                             else{
-                                Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                                Intent intent = new Intent(SplashScreenActivity.this, WelcomeScreenActivity.class);
                                 startActivity(intent);
                                 finishAffinity();
                             }
@@ -89,17 +89,23 @@ public class SplashScreenActivity extends AppCompatActivity {
                     else{
                         Toast.makeText(SplashScreenActivity.this, "Không tìm thấy dữ liệu tài khoản!",
                                 Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SplashScreenActivity.this, WelcomeScreenActivity.class);
+                        startActivity(intent);
+                        finishAffinity();
                     }
                 }
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
                     Toast.makeText(SplashScreenActivity.this, "Lấy dữ liệu tài khoản từ firebase thất bại!",
                             Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SplashScreenActivity.this, WelcomeScreenActivity.class);
+                    startActivity(intent);
+                    finishAffinity();
                 }
             });
         }
         else{
-            Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+            Intent intent = new Intent(SplashScreenActivity.this, WelcomeScreenActivity.class);
             startActivity(intent);
             finishAffinity();
         }

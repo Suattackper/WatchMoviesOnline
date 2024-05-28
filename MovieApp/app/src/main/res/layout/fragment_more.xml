@@ -168,7 +168,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lnlAcccount"
+                android:id="@+id/lnlAcccountChange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -192,7 +192,7 @@
                     android:layout_marginStart="15dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="@string/account"
+                    android:text="Change password"
                     android:textColor="@color/white" />
 
                 <ImageView
@@ -207,6 +207,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lnlAcccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -219,7 +220,7 @@
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
                     android:background="@drawable/mode_item_background"
-                    android:src="@drawable/outline_remove_red_eye_24"
+                    android:src="@drawable/rounded_account_box_24"
                     app:tint="@color/white"
                     tools:ignore="ContentDescription" />
 
@@ -233,14 +234,13 @@
                     android:text="@string/account"
                     android:textColor="@color/white" />
 
-                <CheckBox
-                    android:id="@+id/btnModeToggle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:button="@null"
-                    android:checked="false"
-                    android:drawableEnd="@drawable/checkbox_toggle_selector"/>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/rounded_chevron_right_24"
+                    app:tint="@color/white" />
 
             </LinearLayout>
 

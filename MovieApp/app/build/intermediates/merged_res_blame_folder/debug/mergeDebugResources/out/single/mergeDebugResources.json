@@ -76,10 +76,6 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\drawable\\mountain_forest_clouds.png"
     },
     {
-        "merged": "com.example.movieapp-debug-56:/layout_activity_register.xml.flat",
-        "source": "com.example.movieapp-main-58:/layout/activity_register.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-56:\\mipmap-anydpi_ic_launcher.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\mipmap-anydpi\\ic_launcher.xml"
     },
@@ -248,10 +244,6 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\drawable\\radio_flat_text_selector.xml"
     },
     {
-        "merged": "com.example.movieapp-debug-56:/layout_activity_change_password.xml.flat",
-        "source": "com.example.movieapp-main-58:/layout/activity_change_password.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-56:\\layout_layout_item_movie_detail_trailers.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\layout_item_movie_detail_trailers.xml"
     },
@@ -368,6 +360,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\mipmap-hdpi\\ic_logo_app.webp"
     },
     {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-56:\\layout_activity_change_password.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\activity_change_password.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-56:\\layout_fragment_category.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\layout\\fragment_category.xml"
     },
@@ -406,6 +402,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-56:\\drawable_rounded_star_half_24.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-main-58:\\drawable\\rounded_star_half_24.xml"
+    },
+    {
+        "merged": "com.example.movieapp-debug-56:/layout_activity_forgot_password.xml.flat",
+        "source": "com.example.movieapp-main-58:/layout/activity_forgot_password.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.4\\com.example.movieapp-debug-56:\\drawable_ic_logo_toolbar.xml.flat",

@@ -3602,9 +3602,9 @@ int id btnChange 0x7f0a0301
 int id btnCreateAcc 0x7f0a0079
 int id btnDelete 0x7f0a007a
 int id btnDownload 0x7f0a007b
+int id btnEnter 0x7f0a0307
 int id btnHome 0x7f0a007c
 int id btnInfoMovie 0x7f0a007d
-int id btnModeToggle 0x7f0a007e
 int id btnMore 0x7f0a007f
 int id btnMyList 0x7f0a0080
 int id btnPhimBo 0x7f0a0081
@@ -3882,6 +3882,7 @@ int id list_item 0x7f0a018d
 int id lnEmptyList 0x7f0a018e
 int id lnMovieInfo 0x7f0a018f
 int id lnlAcccount 0x7f0a0190
+int id lnlAcccountChange 0x7f0a0306
 int id lnlLogout 0x7f0a0191
 int id lnlNotification 0x7f0a0192
 int id lnlProfile 0x7f0a0193
