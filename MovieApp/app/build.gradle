@@ -70,6 +70,7 @@ dependencies {
     implementation libs.exoplayer.dash
     implementation libs.firebase.database
     implementation libs.firebase.auth
+    implementation libs.firebase.storage
 
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit

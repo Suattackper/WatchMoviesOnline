@@ -62,17 +62,17 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.txtCreateAcc.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-            finish();
+            finishAffinity();
         });
 
-        binding.imvBack.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), WelcomeScreenActivity.class));
-            finish();
-        });
+//        binding.imvBack.setOnClickListener(v -> {
+//            startActivity(new Intent(getApplicationContext(), WelcomeScreenActivity.class));
+//            finish();
+//        });
 
         binding.txtForgotPass.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), ForgotPasswordActivity.class));
-            finish();
+            finishAffinity();
         });
         binding.btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override

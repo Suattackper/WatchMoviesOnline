@@ -10,9 +10,26 @@ public class Account {
     private String Name;
     private String Password;
     private String PhoneNumber;
-    private String Image;
+    private String ImageUrl;
+    private String ImageName;
     private Boolean Status;
     private int Index;
+
+    public String getImageUrl() {
+        return ImageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        ImageUrl = imageUrl;
+    }
+
+    public String getImageName() {
+        return ImageName;
+    }
+
+    public void setImageName(String imageName) {
+        ImageName = imageName;
+    }
 
     public Account() {
     }
@@ -79,13 +96,5 @@ public class Account {
 
     public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
-    }
-
-    public String getImage() {
-        return Image;
-    }
-
-    public void setImage(String image) {
-        Image = image;
     }
 }

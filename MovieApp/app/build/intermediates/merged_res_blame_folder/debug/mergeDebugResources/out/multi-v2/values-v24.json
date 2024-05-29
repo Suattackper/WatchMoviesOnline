@@ -4,7 +4,17 @@
             "outputFile": "com.example.movieapp-mergeDebugResources-54:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\8176dc426ae38e53b4ab16a2cf3aa390\\transformed\\material-1.10.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\719750713507cbf33bdd77a72ae7c0fc\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\b36c44bbb3cfa2b7eddced5120cb2841\\transformed\\material-1.10.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -23,7 +33,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\7707fa82d3adea1cdfad75c7c1c83322\\transformed\\media-1.6.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\e0945f30b93d48da8531aebd4cf6d6c1\\transformed\\media-1.6.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -37,16 +47,6 @@
                         "startOffsets": "1547,1613,1674,1740",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "1608,1669,1735,1802"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ACER\\.gradle\\caches\\transforms-3\\23da5502bc9f12594f5b3e48777da50e\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
                     }
                 }
             ]

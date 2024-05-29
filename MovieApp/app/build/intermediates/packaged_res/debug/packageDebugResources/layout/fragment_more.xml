@@ -7,45 +7,51 @@
     android:fillViewport="true"
     tools:context=".fragment.MoreFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolBar"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imvLogoApp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="@id/guideline1"
-            app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginStart="4dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:src="@drawable/netflix_logo_icon"/>
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/toolBar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/guideline1"-->
+<!--            app:layout_constraintStart_toStartOf="@id/guideline1"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imvBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:adjustViewBounds="true"
-                android:padding="8dp"
-                android:src="@drawable/ic_arrow_back"
-                android:tint="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--&lt;!&ndash;            <androidx.appcompat.widget.AppCompatImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/imvBack"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="40dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:adjustViewBounds="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:padding="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:src="@drawable/ic_arrow_back"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:tint="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imvLogoApp"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginStart="4dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:padding="5dp"
-                android:src="@drawable/netflix_logo_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imvBack"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/imvLogoApp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginStart="4dp"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:contentDescription="@string/app_name"-->
+<!--                android:padding="5dp"-->
+<!--                android:src="@drawable/netflix_logo_icon"/>-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
         <LinearLayout
@@ -53,10 +59,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:gravity="center_horizontal"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolBar">
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imvAvatar"
@@ -80,9 +85,10 @@
 
         <LinearLayout
             android:id="@+id/lnlSettings"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:padding="10dp"
             android:background="@android:color/transparent"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -168,6 +174,44 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lnlAcccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/mode_item_background"
+                    android:src="@drawable/rounded_account_box_24"
+                    app:tint="@color/white"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/account"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/rounded_chevron_right_24"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lnlAcccountChange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -197,44 +241,6 @@
 
                 <ImageView
                     android:id="@+id/arrowOpenAcc"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center_vertical"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/rounded_chevron_right_24"
-                    app:tint="@color/white" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lnlAcccount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:background="@drawable/mode_item_background"
-                    android:src="@drawable/rounded_account_box_24"
-                    app:tint="@color/white"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="15dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="@string/account"
-                    android:textColor="@color/white" />
-
-                <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center_vertical"
@@ -291,7 +297,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.04" />
+            app:layout_constraintGuide_end="377dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -301,7 +307,7 @@
             app:layout_constraintGuide_percent="0.96" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </androidx.core.widget.NestedScrollView>

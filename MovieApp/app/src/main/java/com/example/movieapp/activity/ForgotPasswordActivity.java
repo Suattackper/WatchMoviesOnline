@@ -52,18 +52,18 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
-        binding.imvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
-            }
-        });
+//        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+//                finish();
+//            }
+//        });
         binding.txtSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
+                finishAffinity();
             }
         });
         binding.btnEnter.setOnClickListener(new View.OnClickListener() {

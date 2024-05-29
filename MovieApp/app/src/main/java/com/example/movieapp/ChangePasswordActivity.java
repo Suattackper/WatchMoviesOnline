@@ -59,23 +59,23 @@ public class ChangePasswordActivity extends AppCompatActivity {
     private void addEvents() {
         binding.txtCreateAcc.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-            finish();
+//            finishAffinity();
         });
 
         binding.txtForgotPass.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), ForgotPasswordActivity.class));
-            finish();
+//            finishAffinity();
         });
 
-        binding.imvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent = new Intent(ChangePasswordActivity.this, MainActivity.class);
-//                startActivity(intent);
-//                finishAffinity();
-                finish();
-            }
-        });
+//        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Intent intent = new Intent(ChangePasswordActivity.this, MainActivity.class);
+////                startActivity(intent);
+////                finishAffinity();
+//                finish();
+//            }
+//        });
 
         binding.btnChange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,7 +159,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                                         myRef.setValue(account);
 
                                         progressDialog.dismiss();
-
+                                        Toast.makeText(ChangePasswordActivity.this, "Đổi mật khẩu thành công!", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(ChangePasswordActivity.this, MainActivity.class);
                                         startActivity(intent);
                                         finishAffinity();

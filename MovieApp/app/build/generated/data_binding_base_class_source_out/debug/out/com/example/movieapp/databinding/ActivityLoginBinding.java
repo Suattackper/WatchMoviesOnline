@@ -35,9 +35,6 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextInputEditText editPassword;
 
   @NonNull
-  public final AppCompatImageView imvBack;
-
-  @NonNull
   public final AppCompatImageView imvLogoApp;
 
   @NonNull
@@ -47,7 +44,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final ConstraintLayout lySigninAuth;
 
   @NonNull
-  public final ConstraintLayout lyToolbar;
+  public final LinearLayout lyToolbar;
 
   @NonNull
   public final LinearLayout main;
@@ -63,16 +60,14 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   private ActivityLoginBinding(@NonNull ScrollView rootView, @NonNull AppCompatButton btnSignin,
       @NonNull TextInputEditText editEmail, @NonNull TextInputEditText editPassword,
-      @NonNull AppCompatImageView imvBack, @NonNull AppCompatImageView imvLogoApp,
-      @NonNull ConstraintLayout lyDescIntro, @NonNull ConstraintLayout lySigninAuth,
-      @NonNull ConstraintLayout lyToolbar, @NonNull LinearLayout main,
-      @NonNull AppCompatTextView txtCreateAcc, @NonNull AppCompatTextView txtForgotPass,
-      @NonNull TextView txtSigninLabel) {
+      @NonNull AppCompatImageView imvLogoApp, @NonNull ConstraintLayout lyDescIntro,
+      @NonNull ConstraintLayout lySigninAuth, @NonNull LinearLayout lyToolbar,
+      @NonNull LinearLayout main, @NonNull AppCompatTextView txtCreateAcc,
+      @NonNull AppCompatTextView txtForgotPass, @NonNull TextView txtSigninLabel) {
     this.rootView = rootView;
     this.btnSignin = btnSignin;
     this.editEmail = editEmail;
     this.editPassword = editPassword;
-    this.imvBack = imvBack;
     this.imvLogoApp = imvLogoApp;
     this.lyDescIntro = lyDescIntro;
     this.lySigninAuth = lySigninAuth;
@@ -128,12 +123,6 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imvBack;
-      AppCompatImageView imvBack = ViewBindings.findChildViewById(rootView, id);
-      if (imvBack == null) {
-        break missingId;
-      }
-
       id = R.id.imvLogoApp;
       AppCompatImageView imvLogoApp = ViewBindings.findChildViewById(rootView, id);
       if (imvLogoApp == null) {
@@ -153,7 +142,7 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       id = R.id.lyToolbar;
-      ConstraintLayout lyToolbar = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout lyToolbar = ViewBindings.findChildViewById(rootView, id);
       if (lyToolbar == null) {
         break missingId;
       }
@@ -183,8 +172,8 @@ public final class ActivityLoginBinding implements ViewBinding {
       }
 
       return new ActivityLoginBinding((ScrollView) rootView, btnSignin, editEmail, editPassword,
-          imvBack, imvLogoApp, lyDescIntro, lySigninAuth, lyToolbar, main, txtCreateAcc,
-          txtForgotPass, txtSigninLabel);
+          imvLogoApp, lyDescIntro, lySigninAuth, lyToolbar, main, txtCreateAcc, txtForgotPass,
+          txtSigninLabel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

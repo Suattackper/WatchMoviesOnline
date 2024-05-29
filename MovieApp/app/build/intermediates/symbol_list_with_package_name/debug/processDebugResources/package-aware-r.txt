@@ -3715,6 +3715,7 @@ id easeOut
 id east
 id edge
 id editEmail
+id editImvUserAvatar
 id editPassword
 id editPasswordConfirm
 id editPasswordCur
@@ -4166,7 +4167,6 @@ id titleMovieName
 id titleTv
 id title_template
 id toggle
-id toolBar
 id toolbar
 id toolbarEditProfile
 id top
@@ -4371,6 +4371,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_change_password
+layout activity_edit_profile_account
 layout activity_forgot_password
 layout activity_login
 layout activity_main

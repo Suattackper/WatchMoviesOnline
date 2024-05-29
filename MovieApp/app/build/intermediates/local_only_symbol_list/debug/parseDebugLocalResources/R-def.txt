@@ -198,6 +198,7 @@ id cvMovieImg_Home
 id cvTrailerMovie_More
 id deleteBtn
 id editEmail
+id editImvUserAvatar
 id editPassword
 id editPasswordConfirm
 id editPasswordCur
@@ -287,7 +288,6 @@ id tabLine
 id title
 id titleMovieName
 id titleTv
-id toolBar
 id toolbar
 id toolbarEditProfile
 id tvActor
@@ -334,6 +334,7 @@ id txtSigninLabel
 id viewPager
 id ytbPlayer
 layout activity_change_password
+layout activity_edit_profile_account
 layout activity_forgot_password
 layout activity_login
 layout activity_main

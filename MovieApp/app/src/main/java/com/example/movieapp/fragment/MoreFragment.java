@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 
 import com.example.movieapp.CategoryFragment;
 import com.example.movieapp.ChangePasswordActivity;
+import com.example.movieapp.EditProfileAccountActivity;
 import com.example.movieapp.R;
 
 import com.example.movieapp.activity.LoginActivity;
@@ -51,7 +52,8 @@ public class MoreFragment extends Fragment {
         binding.lnlAcccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getContext(), EditProfileAccountActivity.class);
+                startActivity(intent);
             }
         });
         binding.lnlAcccountChange.setOnClickListener(new View.OnClickListener() {
@@ -66,15 +68,16 @@ public class MoreFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), LoginActivity.class);
                 startActivity(intent);
+                getActivity().finishAffinity();
                 FirebaseAuth.getInstance().signOut();
             }
         });
-        binding.imvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
+//        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                getActivity().onBackPressed();
+//            }
+//        });
         binding.lnlWatchList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +104,7 @@ public class MoreFragment extends Fragment {
         Account account = gson.fromJson(json, Account.class);
 
         //set image bằng picasso
-        String imageUrl = account.getImage();
+        String imageUrl = account.getImageUrl();
         Picasso.get().load(imageUrl).into(binding.imvAvatar);
 
         binding.tvUserName.setText(account.getName());

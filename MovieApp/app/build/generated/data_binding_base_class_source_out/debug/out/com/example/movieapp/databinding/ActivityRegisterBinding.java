@@ -41,9 +41,6 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextInputEditText editUserName;
 
   @NonNull
-  public final AppCompatImageView imvBack;
-
-  @NonNull
   public final AppCompatImageView imvLogoApp;
 
   @NonNull
@@ -53,7 +50,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final ConstraintLayout lySigninAuth;
 
   @NonNull
-  public final ConstraintLayout lyToolbar;
+  public final LinearLayout lyToolbar;
 
   @NonNull
   public final LinearLayout main;
@@ -67,17 +64,16 @@ public final class ActivityRegisterBinding implements ViewBinding {
   private ActivityRegisterBinding(@NonNull ScrollView rootView, @NonNull AppCompatButton btnSignup,
       @NonNull TextInputEditText editEmail, @NonNull TextInputEditText editPassword,
       @NonNull TextInputEditText editPasswordConfirm, @NonNull TextInputEditText editUserName,
-      @NonNull AppCompatImageView imvBack, @NonNull AppCompatImageView imvLogoApp,
-      @NonNull ConstraintLayout lyDescIntro, @NonNull ConstraintLayout lySigninAuth,
-      @NonNull ConstraintLayout lyToolbar, @NonNull LinearLayout main,
-      @NonNull AppCompatTextView txtSignin, @NonNull TextView txtSigninLabel) {
+      @NonNull AppCompatImageView imvLogoApp, @NonNull ConstraintLayout lyDescIntro,
+      @NonNull ConstraintLayout lySigninAuth, @NonNull LinearLayout lyToolbar,
+      @NonNull LinearLayout main, @NonNull AppCompatTextView txtSignin,
+      @NonNull TextView txtSigninLabel) {
     this.rootView = rootView;
     this.btnSignup = btnSignup;
     this.editEmail = editEmail;
     this.editPassword = editPassword;
     this.editPasswordConfirm = editPasswordConfirm;
     this.editUserName = editUserName;
-    this.imvBack = imvBack;
     this.imvLogoApp = imvLogoApp;
     this.lyDescIntro = lyDescIntro;
     this.lySigninAuth = lySigninAuth;
@@ -144,12 +140,6 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imvBack;
-      AppCompatImageView imvBack = ViewBindings.findChildViewById(rootView, id);
-      if (imvBack == null) {
-        break missingId;
-      }
-
       id = R.id.imvLogoApp;
       AppCompatImageView imvLogoApp = ViewBindings.findChildViewById(rootView, id);
       if (imvLogoApp == null) {
@@ -169,7 +159,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
       }
 
       id = R.id.lyToolbar;
-      ConstraintLayout lyToolbar = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout lyToolbar = ViewBindings.findChildViewById(rootView, id);
       if (lyToolbar == null) {
         break missingId;
       }
@@ -193,8 +183,8 @@ public final class ActivityRegisterBinding implements ViewBinding {
       }
 
       return new ActivityRegisterBinding((ScrollView) rootView, btnSignup, editEmail, editPassword,
-          editPasswordConfirm, editUserName, imvBack, imvLogoApp, lyDescIntro, lySigninAuth,
-          lyToolbar, main, txtSignin, txtSigninLabel);
+          editPasswordConfirm, editUserName, imvLogoApp, lyDescIntro, lySigninAuth, lyToolbar, main,
+          txtSignin, txtSigninLabel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

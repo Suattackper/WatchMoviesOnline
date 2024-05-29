@@ -16,6 +16,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.movieapp.ChangePasswordActivity;
 import com.example.movieapp.databinding.ActivityRegisterBinding;
 import com.example.movieapp.model.Account;
 import com.example.movieapp.model.AccountList;
@@ -65,13 +66,13 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
-        binding.imvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), WelcomeScreenActivity.class));
-                finish();
-            }
-        });
+//        binding.imvBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(), WelcomeScreenActivity.class));
+//                finish();
+//            }
+//        });
         binding.btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,8 +142,10 @@ public class RegisterActivity extends AppCompatActivity {
                                             account.setName(name);
                                             account.setEmail(email);
                                             account.setPassword(pass);
+                                            account.setPhoneNumber("");
                                             account.setStatus(false);
-                                            account.setImage("https://firebasestorage.googleapis.com/v0/b/movieapp-2f052.appspot.com/o/ImageUsers%2Fprofile_1.png?alt=media&token=d74a20ea-f921-4822-bb95-480b824db3d0");
+                                            account.setImageName("");
+                                            account.setImageUrl("https://firebasestorage.googleapis.com/v0/b/movieapp-2f052.appspot.com/o/ImageUsers%2Fprofile_1.png?alt=media&token=d74a20ea-f921-4822-bb95-480b824db3d0");
 
                                             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Account");
                                             databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -177,9 +180,10 @@ public class RegisterActivity extends AppCompatActivity {
                                                         if (task.isSuccessful()) {
                                                             progressDialog.dismiss();
                                                             // Đăng ký và cập nhật thành công
+                                                            Toast.makeText(RegisterActivity.this, "Tạo tài khoản thành công!", Toast.LENGTH_SHORT).show();
                                                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                                             startActivity(intent);
-                                                            finish();
+                                                            finishAffinity();
                                                         } else {
                                                             progressDialog.dismiss();
                                                             // Cập nhật thông tin người dùng thất bại
@@ -210,7 +214,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
+                finishAffinity();
             }
         });
     }

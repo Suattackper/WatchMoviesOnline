@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
@@ -46,9 +45,6 @@ public final class FragmentMoreBinding implements ViewBinding {
   public final ImageView imvAvatar;
 
   @NonNull
-  public final AppCompatImageView imvBack;
-
-  @NonNull
   public final AppCompatImageView imvLogoApp;
 
   @NonNull
@@ -73,20 +69,16 @@ public final class FragmentMoreBinding implements ViewBinding {
   public final LinearLayout lnlWatchList;
 
   @NonNull
-  public final ConstraintLayout toolBar;
-
-  @NonNull
   public final TextView tvUserName;
 
   private FragmentMoreBinding(@NonNull NestedScrollView rootView, @NonNull ImageView arrowLogout,
       @NonNull ImageView arrowOpenAcc, @NonNull ImageView arrowOpenNoti,
       @NonNull ImageView arrowOpenWatch, @NonNull Guideline guideline1,
       @NonNull Guideline guideline2, @NonNull ImageView imvAvatar,
-      @NonNull AppCompatImageView imvBack, @NonNull AppCompatImageView imvLogoApp,
-      @NonNull LinearLayout lnlAcccount, @NonNull LinearLayout lnlAcccountChange,
-      @NonNull LinearLayout lnlLogout, @NonNull LinearLayout lnlNotification,
-      @NonNull LinearLayout lnlProfile, @NonNull LinearLayout lnlSettings,
-      @NonNull LinearLayout lnlWatchList, @NonNull ConstraintLayout toolBar,
+      @NonNull AppCompatImageView imvLogoApp, @NonNull LinearLayout lnlAcccount,
+      @NonNull LinearLayout lnlAcccountChange, @NonNull LinearLayout lnlLogout,
+      @NonNull LinearLayout lnlNotification, @NonNull LinearLayout lnlProfile,
+      @NonNull LinearLayout lnlSettings, @NonNull LinearLayout lnlWatchList,
       @NonNull TextView tvUserName) {
     this.rootView = rootView;
     this.arrowLogout = arrowLogout;
@@ -96,7 +88,6 @@ public final class FragmentMoreBinding implements ViewBinding {
     this.guideline1 = guideline1;
     this.guideline2 = guideline2;
     this.imvAvatar = imvAvatar;
-    this.imvBack = imvBack;
     this.imvLogoApp = imvLogoApp;
     this.lnlAcccount = lnlAcccount;
     this.lnlAcccountChange = lnlAcccountChange;
@@ -105,7 +96,6 @@ public final class FragmentMoreBinding implements ViewBinding {
     this.lnlProfile = lnlProfile;
     this.lnlSettings = lnlSettings;
     this.lnlWatchList = lnlWatchList;
-    this.toolBar = toolBar;
     this.tvUserName = tvUserName;
   }
 
@@ -178,12 +168,6 @@ public final class FragmentMoreBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imvBack;
-      AppCompatImageView imvBack = ViewBindings.findChildViewById(rootView, id);
-      if (imvBack == null) {
-        break missingId;
-      }
-
       id = R.id.imvLogoApp;
       AppCompatImageView imvLogoApp = ViewBindings.findChildViewById(rootView, id);
       if (imvLogoApp == null) {
@@ -232,12 +216,6 @@ public final class FragmentMoreBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.toolBar;
-      ConstraintLayout toolBar = ViewBindings.findChildViewById(rootView, id);
-      if (toolBar == null) {
-        break missingId;
-      }
-
       id = R.id.tvUserName;
       TextView tvUserName = ViewBindings.findChildViewById(rootView, id);
       if (tvUserName == null) {
@@ -245,9 +223,9 @@ public final class FragmentMoreBinding implements ViewBinding {
       }
 
       return new FragmentMoreBinding((NestedScrollView) rootView, arrowLogout, arrowOpenAcc,
-          arrowOpenNoti, arrowOpenWatch, guideline1, guideline2, imvAvatar, imvBack, imvLogoApp,
-          lnlAcccount, lnlAcccountChange, lnlLogout, lnlNotification, lnlProfile, lnlSettings,
-          lnlWatchList, toolBar, tvUserName);
+          arrowOpenNoti, arrowOpenWatch, guideline1, guideline2, imvAvatar, imvLogoApp, lnlAcccount,
+          lnlAcccountChange, lnlLogout, lnlNotification, lnlProfile, lnlSettings, lnlWatchList,
+          tvUserName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

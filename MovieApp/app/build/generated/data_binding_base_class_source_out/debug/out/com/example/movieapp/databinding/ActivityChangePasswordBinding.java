@@ -37,9 +37,6 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
   public final TextInputEditText editPasswordNewConfirm;
 
   @NonNull
-  public final AppCompatImageView imvBack;
-
-  @NonNull
   public final AppCompatImageView imvLogoApp;
 
   @NonNull
@@ -49,7 +46,7 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
   public final ConstraintLayout lySigninAuth;
 
   @NonNull
-  public final ConstraintLayout lyToolbar;
+  public final LinearLayout lyToolbar;
 
   @NonNull
   public final LinearLayout main;
@@ -66,17 +63,15 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
   private ActivityChangePasswordBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppCompatButton btnChange, @NonNull TextInputEditText editPasswordCur,
       @NonNull TextInputEditText editPasswordNew, @NonNull TextInputEditText editPasswordNewConfirm,
-      @NonNull AppCompatImageView imvBack, @NonNull AppCompatImageView imvLogoApp,
-      @NonNull ConstraintLayout lyDescIntro, @NonNull ConstraintLayout lySigninAuth,
-      @NonNull ConstraintLayout lyToolbar, @NonNull LinearLayout main,
-      @NonNull TextView txtChangePass, @NonNull AppCompatTextView txtCreateAcc,
-      @NonNull AppCompatTextView txtForgotPass) {
+      @NonNull AppCompatImageView imvLogoApp, @NonNull ConstraintLayout lyDescIntro,
+      @NonNull ConstraintLayout lySigninAuth, @NonNull LinearLayout lyToolbar,
+      @NonNull LinearLayout main, @NonNull TextView txtChangePass,
+      @NonNull AppCompatTextView txtCreateAcc, @NonNull AppCompatTextView txtForgotPass) {
     this.rootView = rootView;
     this.btnChange = btnChange;
     this.editPasswordCur = editPasswordCur;
     this.editPasswordNew = editPasswordNew;
     this.editPasswordNewConfirm = editPasswordNewConfirm;
-    this.imvBack = imvBack;
     this.imvLogoApp = imvLogoApp;
     this.lyDescIntro = lyDescIntro;
     this.lySigninAuth = lySigninAuth;
@@ -138,12 +133,6 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imvBack;
-      AppCompatImageView imvBack = ViewBindings.findChildViewById(rootView, id);
-      if (imvBack == null) {
-        break missingId;
-      }
-
       id = R.id.imvLogoApp;
       AppCompatImageView imvLogoApp = ViewBindings.findChildViewById(rootView, id);
       if (imvLogoApp == null) {
@@ -163,7 +152,7 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
       }
 
       id = R.id.lyToolbar;
-      ConstraintLayout lyToolbar = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout lyToolbar = ViewBindings.findChildViewById(rootView, id);
       if (lyToolbar == null) {
         break missingId;
       }
@@ -193,8 +182,8 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
       }
 
       return new ActivityChangePasswordBinding((ConstraintLayout) rootView, btnChange,
-          editPasswordCur, editPasswordNew, editPasswordNewConfirm, imvBack, imvLogoApp,
-          lyDescIntro, lySigninAuth, lyToolbar, main, txtChangePass, txtCreateAcc, txtForgotPass);
+          editPasswordCur, editPasswordNew, editPasswordNewConfirm, imvLogoApp, lyDescIntro,
+          lySigninAuth, lyToolbar, main, txtChangePass, txtCreateAcc, txtForgotPass);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

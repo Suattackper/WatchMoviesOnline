@@ -140,7 +140,7 @@ public class HomeFragment extends Fragment {
         Account account = gson.fromJson(json, Account.class);
 
         //set image bằng picasso
-        String imageUrl = account.getImage();
+        String imageUrl = account.getImageUrl();
         Picasso.get().load(imageUrl).into(binding.imvUserAvatar);
 
         return view;
