@@ -3,6 +3,8 @@ package com.example.movieapp.activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,7 @@ import com.example.movieapp.fragment.WatchListFragment;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,14 +61,40 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
-
     }
 
     public void replaceFragmentUI (Fragment fragment) {
 //        FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        //xóa fragment back trở về reong backstack
+        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
         transaction.replace(R.id.frameLayout, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        int backStackCount = getSupportFragmentManager().getBackStackEntryCount();
+
+        //chỉ còn một fragment trong back stack
+        if (backStackCount == 1) {
+            if (!doubleBackToExitPressedOnce) {
+                this.doubleBackToExitPressedOnce = true;
+                Toast.makeText(this, "Nhấn back một lần nữa để thoát", Toast.LENGTH_SHORT).show();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        doubleBackToExitPressedOnce = false;
+                    }
+                }, 2000); // Thiết lập thời gian đợi là 2 giây
+            } else {
+                finishAffinity(); // Thoát khỏi ứng dụng
+            }
+        } else {
+            super.onBackPressed();
+        }
     }
 }

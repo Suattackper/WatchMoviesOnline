@@ -63,7 +63,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finishAffinity();
+//                finishAffinity();
             }
         });
         binding.btnEnter.setOnClickListener(new View.OnClickListener() {
